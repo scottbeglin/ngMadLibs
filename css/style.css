@@ -1,0 +1,92 @@
+.container {
+    width: 68%;
+    border: 7px solid;
+    padding-bottom: 75px;
+    margin-top: 25px;
+}
+
+.header {
+    padding-bottom: 10px;
+    border-bottom: 7px solid;
+}
+
+.happy-face {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.ngMadLibs-title {
+    margin-top: 25px;
+    padding-left: 10rem;
+    text-align: center;
+}
+
+.automate-title {
+    width: 100%;
+}
+
+body {
+    font-family: "Comic Sans MS", serif;
+    font-size: 250%;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.inputs {
+    font-size: 70%;
+}
+
+.border {
+    border: thick solid black;
+}
+
+.almost-border {
+    border-top: thick solid black;
+    border-bottom: thick solid black;
+    border-right: thick solid black;
+}
+
+.override {
+    border-top: thin solid black;
+    padding: 35px;
+}
+
+.row-height-min {
+    height: 140px;
+}
+
+.standout {
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+}
+
+.submit-btn,
+.reset-btn {
+    margin-top: 15px;
+}
+
+.content {
+    min-height: 450px;
+}
+
+.results.ng-hide-add {
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    opacity: 0;
+}
+
+.results.ng-hide-remove {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+
+.results.ng-hide-add,
+.results.ng-hide-remove {
+    display: block!important;
+}

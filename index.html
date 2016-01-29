@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ngMadLibs Thinkful</title>
+
+    <!-- Bootstrap/Style Sheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="container">
+        <div class="navbar-header">
+            <div class="col-sm-4">
+                <div class="center-block"><img src="images/mad-lib-happy-face.png" class="img- happy-face"></div>
+            </div>
+
+            <div class="col-sm-8 ngMadLibs-title">
+                <img src="images/ng-mad-libs-logo.png" class="img-responsive">
+                <div class="row">
+                    <h1 class="col-xs-6 automate-title">Automate This!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- inputs -->
+    <div class="row content">
+        <div class="col-md-8 col-md-offset-2 border">
+            <form name="madForm">
+                <div class="row text-center">
+                    <h2>-Choose a word and tell a story-</h2>
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="text" placeholder="name" ng-model="data.name" required>
+                    <input type="text" placeholder="job title" ng-model="data.job_title" required>
+                    <input type="text" placeholder="tedious task" ng-model="data.tedious_task" required>
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="text" placeholder="dirty task" ng-model="data.dirty_task" required>
+                    <input type="text" placeholder="celebrity" ng-model="data.celebrity" required>
+                    <input type="text" placeholder="useless skill" ng-model="data.useless_skill" required>
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="text" placeholder="obnoxiuous celebrity" ng-model="data.obnoxiuous_celebrity" required>
+                    <input type="number" placeholder="huge number" ng-model="data.huge_number" required>
+                    <input type="text" placeholder="adjective" ng-model="data.adjective" required>
+                </div>
+                <div class="row text-center">
+                    <button type="submit" class="btn btn-lg btn-default submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- results -->
+    <div class="row content results">
+        <div class="col-md-8 col-md-offset-2 border">
+            <p>{{data.name}} was a {{data.job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{data.tedious_task}} and {{data.dirty_task}}. So, {{data.my_name}} met with his life mentor {{data.celebrity}} who told him to learn how to {{data.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{data.useless_skill}} so he studied programming instead.</p>
+            <p>What a great decision! With his new skills, {{data.my_name}} built a(n) {{data.adjective}} robot named {{data.obnoxiuous_celebrity}} that not only loved {{data.dirty_task}} but did it {{data.huge_number}}faster.</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
