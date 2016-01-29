@@ -33,13 +33,3 @@ body {
 .border {
     border: thick solid black;
 }
-
-.submit-btn {
-    color: red;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-.content {
-    min-height: 240px;
-}
