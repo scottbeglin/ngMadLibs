@@ -11,5 +11,16 @@ app.controller('madLibsController', function ($scope) {
         pronoun: 'she',
         poss: 'her'
     };
+    $scope.hideForm = false;
+
+    $scope.submit = function () {
+        $scope.hideForm = true;
+    }
+
+    $scope.reset = function () {
+        $scope.data = {};
+        $scope.hideForm = false;
+        $scope.submitted = false;
+    }
 
 });

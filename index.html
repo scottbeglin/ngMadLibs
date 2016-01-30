@@ -31,12 +31,11 @@
     </div>
 
     <!-- inputs -->
-    <!-- inputs -->
-    <div class="row content">
+    <div class="row content" ng-hide="hideForm && madForm.$valid">
         <div class="col-md-8 col-md-offset-2 border override">
-            <form name="madForm">
+            <form name="madForm" ng-submit="submitted=true;submit()">
                 <div class="row text-center">
-                    <h2>Choose A Word - Tell A Story</h2>
+                    <h2>Choose Your Words - Tell A Story</h2>
                 </div>
                 <div class="row text-center">
                     <h2>Select a gender:</h2>
@@ -60,18 +59,23 @@
                     <input type="number" placeholder="huge number" ng-model="data.huge_number" required>
                     <input type="text" placeholder="adjective" ng-model="data.adjective" required>
                 </div>
+                <div class="row text-center">
+                    <button type="submit" class="btn btn-lg btn-default submit-btn">Submit</button>
+                </div>
             </form>
         </div>
     </div>
 
     <!-- results -->
-    <div class="col-md-8 col-md-offset-2 border override">
-        <p>{{data.name}} was a {{data.job_title}} who loved technology. Although {{gender.pronoun}} loved parts of {{poss}} job, {{gender.pronoun}} absolutely hated {{data.tedious_task}} and {{data.dirty_task}}. So, {{data.my_name}} met with {{poss}} life mentor {{data.celebrity}} who told {{poss}} to learn how to {{data.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{data.useless_skill}} so {{gender.pronoun}} studied programming instead.</p>
-        <p>What agreat decision! With {{poss}} new skills, {{data.my_name}} built a(n) {{data.adjective}} robot named {{data.obnoxiuous_celebrity}} that not only loved {{data.dirty_task}} but did it {{data.huge_number}} faster.</p>
-
+    <div ng-show="hideForm && madForm.$valid" class="row content results">
+        <div class="col-md-8 col-md-offset-2 border override">
+            <p>{{data.name}} was a {{data.job_title}} who loved technology. Although {{gender.pronoun}} loved parts of {{gender.poss}} job, {{gender.pronoun}} absolutely hated {{data.tedious_task}} and {{data.dirty_task}}. So, {{data.name}} met with {{gender.poss}} life mentor {{data.celebrity}} who told {{gender.poss}} to learn how to {{data.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{data.useless_skill}} so {{gender.pronoun}} studied programming instead.</p>
+            <p>What a great decision! With {{gender.poss}} new skills, {{data.name}} built a {{data.adjective}} robot named {{data.obnoxiuous_celebrity}} that not only loved {{data.dirty_task}} but did it {{data.huge_number}} faster.</p>
+            <div class="row text-center">
+                <button type="button" ng-click="reset()" class="btn btn-lg btn-default reset-btn">Reset</button>
+            </div>
+        </div>
     </div>
-    </div>
-
 
 </body>
 
