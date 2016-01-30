@@ -13,7 +13,7 @@
     <script src="js/app.js"></script>
 </head>
 
-<body>
+<body ng-controller="madLibsController">
     <!-- header -->
     <div class="container">
         <div class="navbar-header">
@@ -31,11 +31,19 @@
     </div>
 
     <!-- inputs -->
+    <!-- inputs -->
     <div class="row content">
-        <div class="col-md-8 col-md-offset-2 border">
+        <div class="col-md-8 col-md-offset-2 border override">
             <form name="madForm">
                 <div class="row text-center">
-                    <h2>-Choose a word and tell a story-</h2>
+                    <h2>Choose A Word - Tell A Story</h2>
+                </div>
+                <div class="row text-center">
+                    <h2>Select a gender:</h2>
+                    <input type="radio" ng-checked="{{gender.pronoun == 'he'}}" ng-click="gender.pronoun='he';gender.poss='his'" id="male" name="gender" value="male" placeholder="">
+                    <label for="gender">Male</label>
+                    <input type="radio" ng-checked="{{gender.pronoun == 'she'}}" ng-click="gender.pronoun='she';gender.possessive='her'" id="female" name="gender" value="female" placeholder="">
+                    <label for="gender">Female</label>
                 </div>
                 <div class="col-md-4 text-center">
                     <input type="text" placeholder="name" ng-model="data.name" required>
@@ -52,16 +60,16 @@
                     <input type="number" placeholder="huge number" ng-model="data.huge_number" required>
                     <input type="text" placeholder="adjective" ng-model="data.adjective" required>
                 </div>
-
             </form>
         </div>
     </div>
+
     <!-- results -->
-    <div class="row content results">
-        <div class="col-md-8 col-md-offset-2 border">
-            <p>{{data.name}} was a {{data.job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{data.tedious_task}} and {{data.dirty_task}}. So, {{data.name}} met with his life mentor {{data.celebrity}} who told him to learn how to {{data.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{data.useless_skill}} so he studied programming instead.</p>
-            <p>What a great decision! With his new skills, {{data.name}} built a {{data.adjective}} robot named {{data.obnoxiuous_celebrity}} that not only loved {{data.dirty_task}} but did it {{data.huge_number}} faster.</p>
-        </div>
+    <div class="col-md-8 col-md-offset-2 border override">
+        <p>{{data.name}} was a {{data.job_title}} who loved technology. Although {{gender.pronoun}} loved parts of {{poss}} job, {{gender.pronoun}} absolutely hated {{data.tedious_task}} and {{data.dirty_task}}. So, {{data.my_name}} met with {{poss}} life mentor {{data.celebrity}} who told {{poss}} to learn how to {{data.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{data.useless_skill}} so {{gender.pronoun}} studied programming instead.</p>
+        <p>What agreat decision! With {{poss}} new skills, {{data.my_name}} built a(n) {{data.adjective}} robot named {{data.obnoxiuous_celebrity}} that not only loved {{data.dirty_task}} but did it {{data.huge_number}} faster.</p>
+
+    </div>
     </div>
 
 
